@@ -54,6 +54,8 @@ public class Ofac {
 	
 	
 	
+	
+	
 	public OfacResultDetail findByOfacId(Integer ofacId) throws Exception {
 		OfacResultDetail ofacResultDetail = new OfacResultDetail();
 		ofacResultDetail = submitAndGetResultOfDetail(ofacId);
@@ -75,6 +77,8 @@ public class Ofac {
 	public void setTimeout(int timeout) {
 		this.timeout = timeout;
 	}
+	
+	
 	
 	private List<OfacResult> submitAndGetResultOfactResult(String type,String name,String id,String program,int minimumNameScore,String address,String city,String stateorProvince, String country, String list) throws Exception {
 	    	 Date startSearchDate = new Date();

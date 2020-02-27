@@ -16,13 +16,19 @@ public class OfacMain {
 		Ofac ofac = new Ofac();
 		
 		  try { 
-			List<OfacResult> results = ofac.search("", "Muhammad iqbal", "",
-		  "SDGT", 100,"", "", "", "", ""); System.out.println(results.size());
+	  	   ofac.setTimeout(100000);
+			List<OfacResult> results = ofac.search("", "Muhammad Iqbal", "29553654234",
+		  "", 92,"", "", "", "", ""); 
+		System.out.println("Total Finding:"+results.size());
+		System.out.println("From The Website:"+ofac.getResultOnText());
+		for(OfacResult r:results){
+			  System.out.println(r.getName()+" "+r.getType()+" "+r.getAddress()+" " +r.getProgram()+" "+r.getScore());
+		  }
+		  System.out.println("TotalTime:"+ofac.getGetTotalSearchTime()+" ms");
 		  
-		  System.out.println(ofac.getGetTotalSearchTime());
 		  }catch(Exception e) {
 			  
-		  }
+		  }/*
 		
 		try {
 			OfacResultDetail ofacDetail = ofac.findByOfacId(2791);
@@ -54,7 +60,7 @@ public class OfacMain {
 			
 		}catch(Exception e) {
 			
-		}
+		}*/
 		
 	}
 
